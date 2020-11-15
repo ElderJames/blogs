@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://jamesyeung.cn/hello-hugo/</loc>
+    <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/posts/</loc>
+    <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/tags/</loc>
+    <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/tags/%E7%A0%81/</loc>
+    <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/posts/coding/</loc>
+    <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/about/</loc>
+    <lastmod>2020-03-14T12:41:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/</loc>
+    <lastmod>2020-03-14T12:41:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/search/</loc>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/photos/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/movies/</loc>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/books/</loc>
+    <priority>0.1</priority>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/posts/daily/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/posts/chat/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jamesyeung.cn/posts/reading/</loc>
+  </url>
+  
+</urlset>
