@@ -30,4 +30,4 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./public
           commit_message: ${{ github.event.head_commit.message }}
-          cname: github.com
+          cname: jamesyeung.cn
