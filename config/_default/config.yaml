@@ -8,14 +8,13 @@ theme: eureka
 
 paginate: 3
 copyright: >
-  &copy; 2021 <a href="https://www.wangchucheng.com/">C. Wang</a> and <a
-  href="https://www.ruiqima.com/">R. Ma</a>
+  &copy; 2021 <a href="https://jamesyeung.cn/">James Yeung
 enableEmoji: true
-enableGitInfo: false
+enableGitInfo: true
 summaryLength: 75
 
-defaultContentLanguage: en
-hasCJKLanguage: false # Set `true` for Chinese/Japanese/Korean.
+defaultContentLanguage: cn
+hasCJKLanguage: true # Set `true` for Chinese/Japanese/Korean.
 defaultContentLanguageInSubdir: false
 
 # Uncomment for google analytics

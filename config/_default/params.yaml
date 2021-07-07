@@ -1,6 +1,6 @@
 mainSections:
   - posts
-description: Eureka is a elegant and powerful theme for Hugo.
+description: James' Blog
 
 repoURL:
 # If it is a Github repo, leave blank
@@ -16,8 +16,8 @@ colorScheme:
 # E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
 siteType: Person
 icon: images/icon.png
-publisherName: C. Wang
-publisherLogo:
+publisherName: James Yeung
+publisherLogo: https://avatars.githubusercontent.com/u/7550366?v=4
 
 highlight:
   handler: highlightjs
@@ -26,7 +26,8 @@ highlight:
     # highlight.js doesn't bundle every language. So please specify additional languages you want here.
     # See https://github.com/highlightjs/cdn-release/tree/master/build/languages for available languages.
     languages:
-      - dart
+      - csharp
+      - html
     # See https://github.com/highlightjs/cdn-release/tree/master/build/styles for available styles.
     style: solarized-light
 
@@ -41,7 +42,7 @@ math:
 
 comment:
   # Options: disqus and commento.
-  platform:
+  platform: 
 
   disqus:
     shortname:
