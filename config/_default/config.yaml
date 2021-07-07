@@ -13,7 +13,7 @@ enableEmoji: true
 enableGitInfo: true
 summaryLength: 75
 
-defaultContentLanguage: cn
+defaultContentLanguage: zh
 hasCJKLanguage: true # Set `true` for Chinese/Japanese/Korean.
 defaultContentLanguageInSubdir: false
 
