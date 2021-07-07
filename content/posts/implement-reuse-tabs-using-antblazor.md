@@ -4,6 +4,7 @@ slug: 'implement-reuse-tabs-using-antblazor'
 date: 2021-07-07
 tags: [.NET, Blazor]
 toc: true
+description: 最近，在 Ant Design Blazor 组件库中实现多标签页组件的呼声日益高涨。于是，我利用周末时间，基于 `BlazorDemoMultiPagesTab` 中提供的思路，结合 Blazor 内置路由组件实现了基于 `Tabs` 组件的 `ReuseTabs` 组件。
 ---
 
 # 前言
