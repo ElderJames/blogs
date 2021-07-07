@@ -7,6 +7,10 @@ toc: true
 description: 以问题的形式介绍 Blazor 的基础概念。
 ---
 
+在本文中，作者以问题的形式介绍 Blazor 的基础概念。
+
+<!--more-->
+
 > 本文翻译自[Blazor Interview Questions And Answers
 > ](https://www.c-sharpcorner.com/article/introduction-to-blazor-with-net-core/)
 

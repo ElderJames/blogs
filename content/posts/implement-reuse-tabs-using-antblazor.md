@@ -7,6 +7,10 @@ toc: true
 description: 最近，在 Ant Design Blazor 组件库中实现多标签页组件的呼声日益高涨。于是，我利用周末时间，基于 `BlazorDemoMultiPagesTab` 中提供的思路，结合 Blazor 内置路由组件实现了基于 `Tabs` 组件的 `ReuseTabs` 组件。
 ---
 
+最近，在 Ant Design Blazor 组件库中实现多标签页组件的呼声日益高涨。于是，我利用周末时间，结合 Blazor 内置路由组件实现了基于 `Tabs` 组件的 `ReuseTabs` 组件。
+
+<!--more-->
+
 # 前言
 
 Blazor 是 .NET 最新的前端框架，可以基于 WebAssembly 或 SignalR （WebSocket）构建前端应用程序，基于 WebAssembly 托管模型的 Blazor 甚至可以离线运行。再加上可以共用 .NET 类库，能使代码量比以往的基于 JS 的前后端分离模型少 1/3。而且现在 .NET 开发者也可以使用自己熟悉的技术和经验来开发前端应用了，不同技术栈的开发人员之间的沟通成本也大大减少，从而再一次解放了生产力。

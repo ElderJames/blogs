@@ -7,6 +7,10 @@ toc: true
 description: .NET 6 预览版 2 现已推出！快来看看那些让人激动不已的新东西！
 ---
 
+.NET 6 预览版 2 现已推出！快来看看那些让人激动不已的新东西！
+
+<!--more-->
+
 > 原文：[《ASP.NET Core updates in .NET 6 Preview 2》](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2/?WT.mc_id=DT-MVP-5003987)，作者 [Daniel Roth](https://devblogs.microsoft.com/aspnet/author/danroth27/?WT.mc_id=DT-MVP-5003987)
 
 ---
@@ -30,16 +34,16 @@ description: .NET 6 预览版 2 现已推出！快来看看那些让人激动不
 
 # 升级现有项目
 
-要将现有的 ASP.NET Core 应用程序从 .NET 6 Preview 1升级到.NET 6 Preview 2，您需要：
+要将现有的 ASP.NET Core 应用程序从 .NET 6 Preview 1 升级到.NET 6 Preview 2，您需要：
 
-- 更新所有 Microsoft.AspNetCore.* 包的引用到 6.0.0-preview.2.*.
-- 更新所有 Microsoft.Extensions.* 包的引用到 6.0.0-preview.2.*.
+- 更新所有 Microsoft.AspNetCore._ 包的引用到 6.0.0-preview.2._.
+- 更新所有 Microsoft.Extensions._ 包的引用到 6.0.0-preview.2._.
 
 再查看完整的 ASP.NET Core 在 .NET 6 中的[破坏性改动](https://docs.microsoft.com/dotnet/core/compatibility/6.0?WT.mc_id=DT-MVP-5003987#aspnet-core)列表。
 
 # Razor 编译器更新为使用 Source Generators
 
-我们在这个预览版中更新了 Razor 编译器，使用 C# Source Generators来实现。Source Generators 在编译过程中运行，并能检查正在编译的内容，以生成额外的文件，与项目的其余部分一起编译。我们使用 Source Generators 简化了 Razor 编译器，并显著加快了构建的时间。
+我们在这个预览版中更新了 Razor 编译器，使用 C# Source Generators 来实现。Source Generators 在编译过程中运行，并能检查正在编译的内容，以生成额外的文件，与项目的其余部分一起编译。我们使用 Source Generators 简化了 Razor 编译器，并显著加快了构建的时间。
 
 下图显示了使用新的 Razor 编译器构建默认的 Blazor Server 和 MVC 模板时的构建时间改进。
 
@@ -92,30 +96,31 @@ public class CustomPasteEventArgs : EventArgs
 ```html
 <!-- 您需要将这段代码直接添加到 blazor.server.js 或 blazor.webassembly.js 的 <script> 标签后面。-->
 <script>
-    Blazor.registerCustomEventType('custompaste', {
-        browserEventName: 'paste',
-        createEventArgs: event => {
-            // 这个例子只处理粘贴文本，但你可以使用任意的 JavaScript API
-            // 来处理用户粘贴其他类型的数据，如图片。
-            return {
-                eventTimestamp: new Date(),
-                pastedData: event.clipboardData.getData('text')
-            };
-        }
-    });
+  Blazor.registerCustomEventType('custompaste', {
+    browserEventName: 'paste',
+    createEventArgs: (event) => {
+      // 这个例子只处理粘贴文本，但你可以使用任意的 JavaScript API
+      // 来处理用户粘贴其他类型的数据，如图片。
+      return {
+        eventTimestamp: new Date(),
+        pastedData: event.clipboardData.getData('text'),
+      };
+    },
+  });
 </script>
 ```
 
-这是告诉浏览器，每当本地粘贴事件发生时，它也应该引发一个自定义粘贴事件，并使用您的自定义逻辑提供事件参数数据。请注意，事件名称的约定在 .NET（事件名称前缀为on）和 JavaScript（事件名称没有任何前缀）之间有所不同。
+这是告诉浏览器，每当本地粘贴事件发生时，它也应该引发一个自定义粘贴事件，并使用您的自定义逻辑提供事件参数数据。请注意，事件名称的约定在 .NET（事件名称前缀为 on）和 JavaScript（事件名称没有任何前缀）之间有所不同。
 
 # 增加 MVC 视图和 Razor 页面的 CSS 隔离
 
-现在，MVC视图 和 Razor 页面跟 Blazor 组件一样支持 CSS 隔离。想要添加一个视图或页面特定的 CSS 文件，只需添加一个与 `.cshtml`文件名称相匹配的 `.cshtml.css` 文件即可。
+现在，MVC 视图 和 Razor 页面跟 Blazor 组件一样支持 CSS 隔离。想要添加一个视图或页面特定的 CSS 文件，只需添加一个与 `.cshtml`文件名称相匹配的 `.cshtml.css` 文件即可。
 
 `Index.cshtml.css`
+
 ```css
 h1 {
-    color: red;
+  color: red;
 }
 ```
 
@@ -170,6 +175,7 @@ h1 {
 ```
 
 `Column.razor`
+
 ```razor
 @typeparam TItem
 
@@ -197,23 +203,24 @@ h1 {
 
 # Blazor 应用程序支持保留预渲染时的状态
 
-Blazor 应用程序可从服务端进行预渲染，以加快应用程序可感知的加载时间。当应用程序在后台进行交互性设置时，可立即渲染预渲染的 HTML。但是，预渲染期间使用的任何状态都会丢失，必须在应用程序完全加载时重新创建。如果异步设置任何状态，那么当预渲染的 UI 被临时占位符替换，然后再次完全渲染时，UI可能会闪烁。
+Blazor 应用程序可从服务端进行预渲染，以加快应用程序可感知的加载时间。当应用程序在后台进行交互性设置时，可立即渲染预渲染的 HTML。但是，预渲染期间使用的任何状态都会丢失，必须在应用程序完全加载时重新创建。如果异步设置任何状态，那么当预渲染的 UI 被临时占位符替换，然后再次完全渲染时，UI 可能会闪烁。
 
 为了解决这个问题，我们增加了新的 `<preserve-component-state />` tag helper，它可以支持把状态持久化到预渲染页面。在你的应用程序中，你可以使用新的 `ComponentApplicationState` 服务来决定你要持久化的状态。当状态即将被持久化到预渲染页面中时，`ComponentApplicationState.OnPersisting` 事件会被触发。然后你就可以在初始化你的组件时恢复（retrieved）任何已被持久化的状态。
 
 下面的示例展示了如何在预渲染期间持久化默认的 `FetchData` 组件中的天气预报，然后在 `Blazor` 服务端应用程序中恢复状态以初始化该组件。
 
 `_Host.cshtml`
+
 ```html
 <body>
-    <component type="typeof(App)" render-mode="ServerPrerendered" />
-    ...
-    @* 当所有组件调用后持久化组件状态 *@
-    <persist-component-state />
+  <component type="typeof(App)" render-mode="ServerPrerendered" />
+  ... @* 当所有组件调用后持久化组件状态 *@
+  <persist-component-state />
 </body>
 ```
 
 `FetchData.razor`
+
 ```razor
 @page "/fetchdata"
 @implements IDisposable
@@ -253,8 +260,7 @@ Blazor 应用程序可从服务端进行预渲染，以加快应用程序可感�
 }
 ```
 
-> 注意：这个预览版中提供了一个 `TryRedeemFromJson<T>` 辅助方法，但有一个已知的问题，将会在未来的更新中解决。为了解决这个问题，请先使用 `TryRedeemPersistedState` 和手动JSON反序列化，如上例所示。
-
+> 注意：这个预览版中提供了一个 `TryRedeemFromJson<T>` 辅助方法，但有一个已知的问题，将会在未来的更新中解决。为了解决这个问题，请先使用 `TryRedeemPersistedState` 和手动 JSON 反序列化，如上例所示。
 
 通过使用与预渲染时相同的状态来初始化你的组件，任何昂贵的初始化步骤都只需要执行一次。新渲染的 UI 也与预渲染的 UI 相匹配，因此不会发生闪烁。
 
