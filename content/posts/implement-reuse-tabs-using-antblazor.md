@@ -1,7 +1,7 @@
 ---
 title: 'Ant Design Blazor 组件库的路由复用多标签页介绍'
 slug: 'implement-reuse-tabs-using-antblazor'
-date: 2021-07-08
+date: 2021-07-07
 tags: [.NET, Blazor]
 toc: true
 ---
