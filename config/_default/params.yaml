@@ -2,7 +2,7 @@ mainSections:
   - posts
 description: James' Blog
 
-repoURL:
+repoURL: https://github.com/ElderJames/blogs
 # If it is a Github repo, leave blank
 repoEditURL:
 
@@ -17,7 +17,7 @@ colorScheme:
 siteType: Person
 icon: images/icon.png
 publisherName: James Yeung
-publisherLogo: https://avatars.githubusercontent.com/u/7550366?v=4
+publisherLogo: photos/mvp-avatar.png
 
 highlight:
   handler: highlightjs
@@ -26,8 +26,11 @@ highlight:
     # highlight.js doesn't bundle every language. So please specify additional languages you want here.
     # See https://github.com/highlightjs/cdn-release/tree/master/build/languages for available languages.
     languages:
+      - dart
       - csharp
+      - razor
       - html
+      - javascript
     # See https://github.com/highlightjs/cdn-release/tree/master/build/styles for available styles.
     style: solarized-light
 

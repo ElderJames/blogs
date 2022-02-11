@@ -4,15 +4,10 @@ slug: 'blazor-interview-questions'
 date: 2021-03-16
 tags: [.NET, Blazor]
 toc: true
-description: 以问题的形式介绍 Blazor 的基础概念。
+summary: 'Blazor 是一个免费的、开源的、跨平台的 Web 框架。本文以面试问答的形式，介绍了 Blazor 中的一些主要概念。'
 ---
 
-在本文中，作者以问题的形式介绍 Blazor 的基础概念。
-
-<!--more-->
-
-> 本文翻译自[Blazor Interview Questions And Answers
-> ](https://www.c-sharpcorner.com/article/introduction-to-blazor-with-net-core/)
+> 本文翻译自[Blazor Interview Questions And Answers](https://www.c-sharpcorner.com/article/introduction-to-blazor-with-net-core/)
 
 # 问题一、 什么是 Blazor
 
@@ -34,12 +29,12 @@ Blazor 还可以与现代托管平台（如 Docker）集成。
 
 # 问题二、 为什么要使用 Blazor?
 
-Blazor 是为那些不熟悉 JavaScript 的开发人员开发的，他们大多拥有 c#和。net 背景。Blazor 提供了以下优点：
+Blazor 是为那些不熟悉 JavaScript 的开发人员开发的，他们大多拥有 C#和 .NET 背景。Blazor 提供了以下优点：
 
-- 用 C#代替 JavaScript 编写代码。
-- 利用现有.NET 库的.NET 生态系统。
+- 用 C# 代替 JavaScript 编写代码。
+- 利用现有 .NET 库的 .NET 生态系统。
 - 在服务器和客户端之间共享应用程序逻辑。
-- 受益于.NET 的性能、可靠性和安全性。
+- 受益于 .NET 的性能、可靠性和安全性。
 - 在 Windows、Linux 和 macOS 上使用 Visual Studio 保持生产力。
 - 建立在一套通用的语言、框架和工具之上，这些语言、框架和工具稳定、功能丰富且易于使用。
 
@@ -55,16 +50,16 @@ Blazor WebAssembly 应用程序通过 WebAssembly 在客户端浏览器中运行
 
 # 问题四、Blazor 中的组件是什么？
 
-组件是 Blazor 的一个基本概念，所有 Blazor 应用都基于组件。Blazor 中的所有 UI 元素都是组件，比如页面、对话框或数据输入表单。从代码的角度来看，Blazor 中的组件是内置于.Net 程序集中的 c#类，它们定义了 UI 呈现逻辑并处理控件和页面事件。
+组件是Blazor的一个基本概念，所有 Blazor 应用都基于组件。Blazor 中的所有 UI 元素都是组件，比如页面、对话框或数据输入表单。从代码的角度来看，Blazor 中的组件是内置于 .Net 程序集中的 C# 类，它们定义了 UI 呈现逻辑并处理控件和页面事件。
 
 Blazor 组件使用 Razor、HTML 和 C# 代码的组合。组件是 Blazor 应用的基础元素，也就是说，在 Blazor 中，每个页面都被视为一个组件。下面是一个简单的客户端 Blazor 应用，展示了默认的页面组件代码。
 
-```
-@page "/"
-<h2>@Title</h2>
-@functions {
-    const string Title = "Blazor";
-}
+```razor
+@page "/"  
+<h2>@Title</h2>  
+@functions {  
+    const string Title = "Blazor";  
+}  
 ```
 
 在上面的代码中，HTML 和后面的代码写在同一个 HTML 文件中。组件的 HTML 部分包含 Razor 语法和 HTML 标记，后面的代码包含实际的逻辑。简而言之，在这个方法中，我们可以在同一个页面上添加视图标记和逻辑。逻辑通过使用一个函数块来分隔。
@@ -73,12 +68,21 @@ Blazor 组件使用 Razor、HTML 和 C# 代码的组合。组件是 Blazor 应�
 
 在 Blazor 中，我们还可以使用 code-behind 的方式来编写组件，让 C# 代码编写在一个单独的文件中。
 
+# 问题五、Blazor 的生命周期与生命周期方法分别是什么？
+
+Blazor 框架的生命周期方法体现了 Blazor 应用在开始、结束以及在中间过程中的各种方法是如何执行的。
+Blazor 使用同步和异步的生命周期方法,在组件初始化和渲染过程中，可以通过重写生命周期方法来对组件执行额外的操作。
+
+下面的图和生命周期事件展示了 Blazor 组件生命周期事件、DOM 事件处理和渲染生命周期方法以及它们在应用程序生命周期中的执行方式。
+
+
+
 ---
 
 未完待续...
 
 ```
-# 问题五、Blazor 的生命周期与生命周期方法分别是什么？
+
 # 问题六、什么是 Blazor WebAssembly？
 # 问题七、什么是 Blazor Server？
 # 问题八、Blazor 支持那些平台？

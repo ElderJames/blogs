@@ -4,7 +4,7 @@ slug: 'asp-net-core-updates-in-net-6-preview-2'
 date: 2021-03-14
 tags: [.NET]
 toc: true
-description: .NET 6 预览版 2 现已推出！快来看看那些让人激动不已的新东西！
+summary: '.NET 6 预览版 2 现已推出，其中包括许多对 ASP.NET Core 的新改进，本文主要介绍本次预览版的新内容。'
 ---
 
 .NET 6 预览版 2 现已推出！快来看看那些让人激动不已的新东西！
