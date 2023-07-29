@@ -1,6 +1,6 @@
 ---
 title: '跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定'
-slug: 'asp-net-core-updates-in-net-6-preview-2'
+slug: 'ant-blazor-reusetabs-supports-supply-parameter-form-query'
 date: 2023-07-28
 tags: [AntDesign,Blazor]
 toc: true
@@ -13,14 +13,30 @@ AntDesign Blazor 作为 Blazor 最受欢迎的开源组件库之一，自然也�
 
 ReuseTabs 是 AntDesign Blazor 在 2021 年 7 月增加的组件，也是 Blazor 目前唯一真正实现路由复用的组件。它只需在 App.razor 增加 RouteData 级联值，就可以在任何 Blazor 项目中独立使用（其文档上的例子就是在官方模板上使用的），不依赖菜单配置就能够主动识别路由，渲染页面组件，并保持每个 Tab 页面的状态切换不会丢失。不像其他组件库的实现，只能在他们指定的配套模板上才能使用…
 
+![Ant Design Blazor 组件库中的多标签页](/photos/reuse-tabs/reuse-tabs-demo1.gif)
+
 它的实现原理也很简单，是通过级联的 RouteData 值，获取需要展示的组件类型以及要绑定页面组件的属性值，再动态渲染组件的。但是因为在 .NET 6 加入的 Query string 属性值绑定实现是在 RouteView 内部利用一个内部静态方法来解析 QueryString 并传给页面组件的，ReuseTabs 想要支持得把代码都抄一份。当时就觉得这样的设计很有局限（后来就懒得了）。
 
-直到在前段时间 .NET 官方博客中发布的文章 [ASP.NET Core 在 .NET 8 Preview 6 中的更新](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-8-preview-6/?WT.mc_id=DT-MVP-5003987)，里面提到了一个特性，级联 query string 值到 Blazor 组件，意思是不再让Query string 值绑定局限于页面组件了，我就像这下 ReuseTabs 缺失了两年的功能，有希望填补了。
+直到在前段时间 .NET 官方博客中发布的文章 [ASP.NET Core 在 .NET 8 Preview 6 中的更新](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-8-preview-6/?WT.mc_id=DT-MVP-5003987#cascade-query-string-values-to-blazor-components)，里面提到了一个特性，级联 query string 值到 Blazor 组件，意思是不再让Query string 值绑定局限于页面组件了，我就像这下 ReuseTabs 缺失了两年的功能，有希望填补了。
+
+![Cascade query string values to Blazor components - .NET Blog](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image.png)
 
 于是就有了今天要介绍的内容。
 
-为了寻找官方是怎么实现的，把 aspnetcore 仓库源码切换到 .NET 6 Preivew 6 的 tag 上，找到 RouteView 的源码在 https://github.com/dotnet/aspnetcore/blob/v8.0.0-preview.6.23329.11/src/Components/Components/src/RouteView.cs#L90，这个 RenderPageWithParameters 方法就是用于渲染页面组件的，在这个支持服务端静态渲染表单的 PR[#47716](https://github.com/dotnet/aspnetcore/pull/47716/files#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96aR80-R84) 加入了 CascadingModelBinder，这样就可以从 Http 请求中获取提交的 FormData 绑定到组件中标记了 SupplyParameterFromForm 特性的模型上。接着，在PR [#48554](https://github.com/dotnet/aspnetcore/pull/48554) 中使 SupplyParameterFromQuery 也能够通过 CascadingModelBinder 传递了，然后把上文提到的 RouteView 中的[内部类 QueryParameterValueSupplier 相关代码](https://github.com/dotnet/aspnetcore/commit/883f06cbf5bfa9d82ef797c09fbcb6af7cbb1536#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96a)删掉了。
+为了寻找官方是怎么实现的，把 aspnetcore 仓库源码切换到 .NET 6 Preivew 6 的 tag 上，找到 RouteView 的源码在 https://github.com/dotnet/aspnetcore/blob/v8.0.0-preview.6.23329.11/src/Components/Components/src/RouteView.cs#L90，这个 RenderPageWithParameters 方法就是用于渲染页面组件的。
+
+![RouteView](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image2.png)
+
+于是追溯这个文件的历史记录，找到在这个支持服务端静态渲染表单的 PR[#47716](https://github.com/dotnet/aspnetcore/pull/47716/files#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96aR80-R84) 加入了 CascadingModelBinder，这样就可以从 Http 请求中获取提交的 FormData 绑定到组件中标记了 SupplyParameterFromForm 特性的模型上。
+
+![RouteView CascadingModelBinder](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image3.png)
+
+接着，在PR [#48554](https://github.com/dotnet/aspnetcore/pull/48554) 中使 SupplyParameterFromQuery 也能够通过 CascadingModelBinder 传递了，然后把上文提到的 RouteView 中的[内部类 QueryParameterValueSupplier 相关代码](https://github.com/dotnet/aspnetcore/commit/883f06cbf5bfa9d82ef797c09fbcb6af7cbb1536#diff-c9ceeb487f25fa6e4e20bbc8eb15b597b014d77d3f464c51fd36d37e0365b96a)删掉了。
+
+![RouteView delete QueryParameterValueSupplier](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image4.png)
 
 这简直正中眉心，马上我就把 RouteView 中的这段代码复制到 ReuseTabs 中了，PR[https://github.com/ant-design-blazor/ant-design-blazor/pull/3377](#3377)，完美！
 
-开心之余，我寻思着就算是抄，也不能抄的不明不白吧，于是就顺便调查了一下 CascadingModelBinder 是怎么传递级联值的。简单一句就是 Blazor 创建了 CascadingModelBinder 组件和 CascadingModelBindingProvider 提供者来抽象和统一了级联传值方法。详情请关注我后面文章，另作介绍。
+![Ant Design Blazor PR 3377](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image5.png)
+
+开心之余，我寻思着就算是抄，也不能抄的不明不白吧，于是就顺便调查了一下 CascadingModelBinder 是怎么传递级联值的。简单一句就是 Blazor 创建了 CascadingModelBinder 组件和 CascadingModelBindingProvider 提供者来抽象和统一了级联传值方法。没想到官方博客中平淡的两句话介绍背后有这么大的改动。详情请关注我后面文章，另作介绍。
