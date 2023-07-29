@@ -38,5 +38,7 @@ ReuseTabs 是 AntDesign Blazor 在 2021 年 7 月增加的组件，也是 Blazor
 这简直正中眉心，马上我就把 RouteView 中的这段代码复制到 ReuseTabs 中了，PR[https://github.com/ant-design-blazor/ant-design-blazor/pull/3377](#3377)，完美！
 
 ![Ant Design Blazor PR 3377](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image5.png)
+![ReuseTabs support query string](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image6.png)
+
 
 开心之余，我寻思着就算是抄，也不能抄的不明不白吧，于是就顺便调查了一下 CascadingModelBinder 是怎么传递级联值的。简单一句就是 Blazor 创建了 CascadingModelBinder 组件和 CascadingModelBindingProvider 提供者来抽象和统一了级联传值方法。没想到官方博客中平淡的两句话介绍背后有这么大的改动。详情请关注我后面文章，另作介绍。
