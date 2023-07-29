@@ -19,7 +19,7 @@ ReuseTabs 是 AntDesign Blazor 在 2021 年 7 月增加的组件，也是 Blazor
 
 直到在前段时间 .NET 官方博客中发布的文章 [ASP.NET Core 在 .NET 8 Preview 6 中的更新](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-8-preview-6/?WT.mc_id=DT-MVP-5003987#cascade-query-string-values-to-blazor-components)，里面提到了一个特性，级联 query string 值到 Blazor 组件，意思是不再让Query string 值绑定局限于页面组件了，我就像这下 ReuseTabs 缺失了两年的功能，有希望填补了。
 
-![Cascade query string values to Blazor components - .NET Blog](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image.png)
+![Cascade query string values to Blazor components - .NET Blog](/photos/ant-blazor-reusetabs-supports-supply-parameter-form-query/image1.png)
 
 于是就有了今天要介绍的内容。
 
