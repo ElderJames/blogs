@@ -1,7 +1,7 @@
 ---
 title: '跟进 .NET 8 Blazor 之 ReuseTabs 支持 Query 属性绑定'
 slug: 'ant-blazor-reusetabs-supports-supply-parameter-form-query'
-date: 2023-07-28
+date: 2023-07-29
 tags: [AntDesign,Blazor]
 toc: true
 summary: 'ASP.NET 团队在 .NET 8 继续全力投入 Blazor，为 Blazor 带来了非常多的新特性，AntDesign Blazor也会继续佛系跟进。本篇主要介绍第一个在AntDesign Blazor 上应用的新特性，也就是 ReuseTabs 自 2021 年发布两年后，仍然未支持的 Query String 属性绑定功能。'
