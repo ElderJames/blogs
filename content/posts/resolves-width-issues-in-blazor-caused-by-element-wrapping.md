@@ -4,7 +4,7 @@ slug: 'resolves-width-issues-in-blazor-caused-by-element-wrapping'
 date: 2023-08-06
 tags: [Blazor]
 toc: true
-summary: ''
+summary: '实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。'
 ---
 
 实践过不同前端框架的朋友应该都知道，对于同一个样式，在不同框架上的表现都会有不同，时时需要做“适配”，在 Blazor 上也不例外。在做 Ant Design Blazor 时就深有体会，因为我们是同步官方的样式，他们的样式只考虑了React 上的实现，除非有人专门提 PR，否则都不会特别考虑其他框架的实现。本文就介绍一个典型问题。
@@ -34,9 +34,28 @@ summary: ''
 
 ![有空隙](/photos/blazor-wrapping-issue/image1.png)
 
-那么，怎么解决呢？
+而我们看下不换行是怎样的：
 
-其实这是css的一个常见问题，解决方法也通用的，就是想办法使由换行转换的空格的字号变为0，使空隙消失，并恢复子元素的字号：
+```
+<div class="badge"><span>1</span><span>2</span><span>2</span></div>
+
+<style>
+    .badge {
+        background-color: red;
+        font-size: 32px;
+    }
+
+        .badge span {
+            background-color: green;
+        }
+</style>
+```
+
+![数字之间没有空隙](../../static/photos/blazor-wrapping-issue/image3.png)
+
+可以看到数字之间没有空隙。那么，怎么解决呢？
+
+其实这属于 css 的一个常见问题，解决方法也通用的，就是想办法使那些从换行转换的空格的字号变为 0，使空隙消失，并恢复子元素的字号：
 
 ```
 <div class="badge">
