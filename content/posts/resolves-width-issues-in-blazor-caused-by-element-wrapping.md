@@ -51,7 +51,7 @@ summary: '实践过不同前端框架的朋友应该都知道，对于同一个�
 </style>
 ```
 
-![数字之间没有空隙](../../static/photos/blazor-wrapping-issue/image3.png)
+![数字之间没有空隙](/photos/blazor-wrapping-issue/image3.png)
 
 可以看到数字之间没有空隙。那么，怎么解决呢？
 
