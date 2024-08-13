@@ -4,10 +4,10 @@ slug: 'blazor-localization-shared-resource'
 date: 2024-08-13
 tags: [.NET, Blazor]
 toc: true
-description: '本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。'
+summary: '本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新'
 ---
 
-本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources]
+本文参考 [Shared resources - ASP.NET Core Blazor globalization and localization](https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources)
 
 ## 注册本地化服务
 
@@ -49,7 +49,7 @@ public class SharedResource
 
 ## 使用
 
-直接修改 `CultureInfo.DefaultThreadCurrentUICulture` 即可实现切换语言。切换后，利用之前的文章中介绍的[局部刷新方法](blazor-reload-partial)，实现 @Body 内容的刷新，这样就能让页面重新显示对应语言的字符串。但是要注意的是，这种实现方式在静态渲染模式下无效，静态渲染的实现方式将在下篇文章中介绍。
+直接修改 `CultureInfo.DefaultThreadCurrentUICulture` 即可实现切换语言。切换后，利用之前的文章中介绍的[局部刷新方法](./blazor-reload-partial)，实现 @Body 内容的刷新，这样就能让页面重新显示对应语言的字符串。但是要注意的是，这种实现方式在静态渲染模式下无效，静态渲染的实现方式将在下篇文章中介绍。
 
 
 ```csharp

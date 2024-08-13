@@ -4,7 +4,7 @@ slug: 'blazor-reload-partial'
 date: 2024-08-12
 tags: [.NET, Blazor]
 toc: true
-description: Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。
+summary: Blazor 如何实现应用内刷新？即只刷新局部内容，不需要浏览刷新。
 ---
 
 在大多数企业应用中，都需要页面刷新的功能。因为用户想获取最新数据，但页面上暂时没实现数据刷新功能，所以需要手动刷新页面。但又不想重新从服务器加载，那速度会很慢。

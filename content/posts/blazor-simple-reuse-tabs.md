@@ -4,7 +4,7 @@ slug: 'blazor-simple-reuse-tabs'
 date: 2024-08-12
 tags: [.NET, Blazor]
 toc: true
-description: AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。
+summary: AntDesign Blazor 中 ReuseTabs 通过获取页面实例来控制渲染，本文将介绍另一种方法，不需要传递路由数据，只用一个劫持ChildContetn渲染的方法。
 ---
 
 核心组件，只渲染一次ChildContent，子内容不再渲染，则这个组件实例就可以达到劫持子内容的效果。

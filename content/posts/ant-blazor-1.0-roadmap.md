@@ -4,7 +4,7 @@ slug: 'ant-blazor-1.0-roadmap'
 date: 2022-09-15
 tags: [.NET, Blazor]
 toc: true
-description: 我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。我们期待由社区一起来贡献，共同见证 1.0 的最终发布。
+summary: 我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。我们期待由社区一起来贡献，共同见证 1.0 的最终发布。
 ---
 
 大家好，感谢大家两年来对 AntDesign Blazor 的支持。我们项目已经发展了两年，组件基本完成了 Antd 所有功能的 Blazor 实现，甚至在有些组件上（如Table、Form）增加了很多Blazor/C#的特性，也已经有很多个人和公司用在了生产环境和商业项目中。
