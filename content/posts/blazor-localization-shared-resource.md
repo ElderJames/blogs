@@ -4,7 +4,7 @@ slug: 'blazor-localization-shared-resource'
 date: 2024-08-13
 tags: [.NET, Blazor]
 toc: true
-description: 本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。
+description: '本文介绍如何为 Blazor 应用添加共享本地化资源，并实现局部刷新。'
 ---
 
 本文参考 (Shared resources - ASP.NET Core Blazor globalization and localization)[https://learn.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-8.0#shared-resources]
