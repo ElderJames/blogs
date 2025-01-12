@@ -1,6 +1,6 @@
 ---
 title: 'Blazor 模版方式复用渲染片段'
-slug: 'blazor-reload-partial'
+slug: 'blazor-reuse-render-fragment'
 date: 2025-01-04
 tags: [.NET, Blazor]
 toc: true
